@@ -48,8 +48,7 @@ public class JukeOperation {
         }
         String artistName = scanner.nextLine();
         ArtistDAO artistDAO = new ArtistDAO();
-        List<Songs> songs = artistDAO.songsOfArtist(artistName);
-        return songs;
+        return artistDAO.songsOfArtist(artistName);
 
     }
 
@@ -67,8 +66,7 @@ public class JukeOperation {
         }
         String genreType = scanner.nextLine();
         GenreDAO genreDAO = new GenreDAO();
-        List<Songs> songs = genreDAO.songsOfGenre(genreType);
-        return songs;
+        return genreDAO.songsOfGenre(genreType);
     }
 
     public List<Songs> searchSongBySongName(String searchAlphabet) throws SQLException, ClassNotFoundException {
@@ -131,7 +129,7 @@ public class JukeOperation {
                                 for (Songs songs : playList) {
                                     System.out.format("%-10s %-30s %-30s %-30s %-30s \n", songs.getSongID(), songs.getSongName(), songs.getDuration(), songs.getGenreType(), songs.getArtistName());
                                 }
-                                System.out.println("PLEASE ENTER THE SONGID YOU WANT TO PLAY");
+                                System.out.println("PLEASE ENTER THE SONG_ID YOU WANT TO PLAY");
                                 int song_id = scanner.nextInt();
                                 audioPlayer.PlaySong(songsDAO.getPathOfTheSong(song_id));
 

@@ -5,16 +5,15 @@ public class Songs {
     private String songName;
     private int songID;
     private double songDuration;
-    private  String songPath;
+    private String songPath;
     private String artistName;
     private String genreType;
-
 
 
     public Songs() {
     }
 
-    public Songs(int songID,String songName,  double songDuration, String songPath,  String genreType,String artistName) {
+    public Songs(int songID, String songName, double songDuration, String songPath, String genreType, String artistName) {
 
         this.songID = songID;
         this.songName = songName;
@@ -28,39 +27,35 @@ public class Songs {
         return songName;
     }
 
-    public void setSongName(String songName) {
+    /*public void setSongName(String songName) {
         this.songName = songName;
-    }
+    }*/
 
     public double getDuration() {
         return songDuration;
     }
 
-    public void setDuration(double duration) {
+    /*public void setDuration(double duration) {
         this.songDuration = duration;
-    }
+    }*/
 
     public String getSongPath() {
         return songPath;
     }
 
-    public void setSongPath(String songPath) {
+    /*public void setSongPath(String songPath) {
         this.songPath = songPath;
-    }
-
+    }*/
 
 
     public int getSongID() {
         return songID;
     }
 
-    public void setSongID(int songID) {
+    /*public void setSongID(int songID) {
         this.songID = songID;
-    }
+    }*/
 
-    public double getSongDuration() {
-        return songDuration;
-    }
 
     public void setSongDuration(double songDuration) {
         this.songDuration = songDuration;

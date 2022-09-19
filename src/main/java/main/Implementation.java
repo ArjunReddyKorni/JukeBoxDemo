@@ -59,6 +59,7 @@ public class Implementation {
                                 for (Songs songs : allSongs) {
                                     System.out.format("%-10s %-30s %-30s %-30s %-30s \n", songs.getSongID(), songs.getSongName(), songs.getDuration(), songs.getGenreType(), songs.getArtistName());
                                 }
+                                System.out.println("============================================================================");
                                 System.out.println("PLEASE SELECT THE OPTION \n1: PLAY A SONG \n2: GO TO PLAYLIST\n3: GO BACK TO MAIN MENU");
                                 int choice = scanner.nextInt();
 
@@ -200,7 +201,7 @@ public class Implementation {
                                 for (Songs songs : playListEx) {
                                     System.out.format("%-10s %-30s %-30s %-30s %-30s \n", songs.getSongID(), songs.getSongName(), songs.getDuration(), songs.getGenreType(), songs.getArtistName());
                                 }
-                                System.out.println("PLEASE ENTER THE SONGID YOU WANT TO PLAY");
+                                System.out.println("PLEASE ENTER THE SONG_ID YOU WANT TO PLAY");
                                 int song_id = scanner.nextInt();
                                 audioPlayer.PlaySong(songsDAO.getPathOfTheSong(song_id));
                         }

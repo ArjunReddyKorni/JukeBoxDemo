@@ -1,6 +1,5 @@
 package data_accessing_object;
 
-import data.Songs;
 import utility.DB_connection;
 
 import java.sql.Connection;
@@ -12,6 +11,7 @@ public class SongsDAO {
 
     public String getPathOfTheSong(int songId) throws SQLException, ClassNotFoundException {
 
+        
         Connection connection = DB_connection.getConnection();
         String sql = "SELECT songPath from songs where songId = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);

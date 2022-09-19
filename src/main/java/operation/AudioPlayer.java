@@ -20,7 +20,6 @@ public class AudioPlayer {
 
     public void PlaySong(List<Songs> songsList) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
-        Scanner scanner = new Scanner(System.in);
         this.songsList = songsList;
         for (int i = 0; i < songsList.size(); i++) {
             songIndex = i;
@@ -42,7 +41,7 @@ public class AudioPlayer {
             String response = "";
 
             while (!response.equals("Q")) {
-                System.out.println("P = play, T= Pause, S=Stop, L=Loop, R = Reset, Q = Quit,N = NextSong,O = previousSong,M = MAIN MENU");
+                System.out.println("P = play, T= Pause, S=Stop, L=Loop, R = Reset, N = NextSong, O = previousSong, Q = Quit, E = Exit, M = MAIN MENU");
                 System.out.print("Enter your choice: ");
 
                 response = scanner.next();
@@ -99,7 +98,7 @@ public class AudioPlayer {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
     }

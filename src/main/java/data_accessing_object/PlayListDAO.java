@@ -21,7 +21,7 @@ public class PlayListDAO {
         Scanner scanner = new Scanner(System.in);
         Connection connection = DB_connection.getConnection();
         PlayListDAO playListDAO = new PlayListDAO();
-        System.out.println("PLEASE ENTER THE NAME OF THE PLAYLIST");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PLEASE ENTER THE NAME OF THE PLAYLIST<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         // scanner.nextLine();
         String playlistname = scanner.nextLine();
         String sql = "Insert into playlistdetails(playListName) values (?)";
@@ -61,13 +61,11 @@ public class PlayListDAO {
         String sql = "SELECT playListID,playListName from playlistdetails;";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
-        System.out.format("%-10s %-20s", "PlayListID", "PlayListName");
+        System.out.format("%-15s %-20s", "PlayListID", "PlayListName");
         System.out.println();
         while (resultSet.next()) {
-            System.out.format("%-10s %-20s", resultSet.getInt(1), resultSet.getString(2));
+            System.out.format("%-15s %-20s", resultSet.getInt(1), resultSet.getString(2));
             System.out.println();
-            /*System.out.println("playListID = " + resultSet.getInt(1));
-            System.out.println("playListName = " + resultSet.getString(2));*/
         }
 
         System.out.println("Please enter the playListID to add songs");
@@ -90,7 +88,7 @@ public class PlayListDAO {
 
                 break;
             case (2):
-                System.out.println("PLEASE ENTER THE ARTIST NAME YOU WANT TO SEARCH");
+                System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PLEASE ENTER THE ARTIST NAME YOU WANT TO SEARCH<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
                 scanner.nextLine();
                 String artistName = scanner.nextLine();
                 List<Songs> songsListOfArtist = jukeOperation.searchArtistByArtistName(artistName);
@@ -100,7 +98,7 @@ public class PlayListDAO {
                 }
                 break;
             case (3):
-                System.out.println("PLEASE ENTER THE GENRE TYPE YOU WANT TO SEARCH");
+                System.out.println(">>>>>>>>>>>>>>>>>>>>PLEASE ENTER THE GENRE TYPE YOU WANT TO SEARCH<<<<<<<<<<<<<<<<<<<<<<<<");
                 String genreType = scanner.nextLine();
                 List<Songs> songsList = jukeOperation.searchGenreByGenreType(genreType);
                 System.out.format("%-10s %-30s %-30s %-30s %-30s \n", "id", "SongName", "Duration", "genreType", "artist");
@@ -109,7 +107,7 @@ public class PlayListDAO {
                 }
                 break;
             case (4):
-                System.out.println("PLEASE ENTER THE SONG NAME YOU WANT TO SEARCH");
+                System.out.println(">>>>>>>>>>>>>>>>>>>PLEASE ENTER THE SONG NAME YOU WANT TO SEARCH<<<<<<<<<<<<<<<<<<<<<<<<<<<");
                 scanner.nextLine();
                 String songName = scanner.nextLine();
                 List<Songs> songsListBasedOnName = jukeOperation.searchSongBySongName(songName);
@@ -125,7 +123,6 @@ public class PlayListDAO {
 
             default:
                 System.err.println("PLEASE SELECT THE RIGHT OPTION");
-                option = scanner.nextInt();
         }
 
         System.out.println("Please enter the songID you want to add to the playlist");
@@ -139,9 +136,9 @@ public class PlayListDAO {
         if (row != 0) {
             System.out.println(" Song Added to the playlist ");
         }
-        System.out.println("1 Do you Want To Add Some more songs");
-        System.out.println("2 Do you Want To play the songs in playlist");
-        System.out.println("3 Go back to main menu");
+        System.out.println("\t\t1 Do you Want To Add Some more songs");
+        System.out.println("\t\t2 Do you Want To play the songs in playlist");
+        System.out.println("\t\t3 Go back to main menu");
         int choice = scanner.nextInt();
         do {
             switch (choice) {
@@ -150,6 +147,7 @@ public class PlayListDAO {
                     break;
                 case (2):
                     List<Songs> playList = exsitingPlaylist();
+                    System.out.println("============================================================================");
                     System.out.format("%-10s %-30s %-30s %-30s %-30s \n", "SongID", "SongName", "Duration", "GenreType", "Artist");
                     System.out.println("-----------------------------------------------------------------------------------------");
                     for (Songs songs : playList) {
@@ -201,11 +199,8 @@ public class PlayListDAO {
         while (resultSet.next()) {
             System.out.format("%-10s %-20s", resultSet.getInt(1), resultSet.getString(2));
             System.out.println();
-            /*System.out.println("playListID = " + resultSet.getInt(1));
-            System.out.println("playListID = " + resultSet.getInt(1));
-            System.out.println("playListName = " + resultSet.getString(2));*/
         }
-        System.out.println(" Please enter the playListID you want to open");
+        System.out.println("\t Please enter the playListID you want to open");
         int playListID = scanner.nextInt();
         String sql = "Select songId from playlist where playListID = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
