@@ -9,13 +9,10 @@ public class DB_connection {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/JukeBox";
-            Connection connection = DriverManager.getConnection(url, "root", "Arjun@123");
 
-            if(connection != null){
+            /** when the method getConnection is called, the DriverManager will attempt
+             *  to locate a suitable driver from amongst those loaded Drivers */
 
-               // System.out.println("CONNECTED TO DATABASE SUCCESSFULLY");
-
-            }
-            return connection;
+            return DriverManager.getConnection(url, "root", "Arjun@123");
         }
 }

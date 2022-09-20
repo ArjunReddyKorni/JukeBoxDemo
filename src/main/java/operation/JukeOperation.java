@@ -18,6 +18,9 @@ import java.util.Scanner;
 
 public class JukeOperation {
 
+    /** This Method Executes a DQL query and Fetch All the columns and the columns values and
+     * placing them in song object and adding all song objects to allSongsList  and returning
+     * the list*/
     public List<Songs> displayAllSongs() throws SQLException, ClassNotFoundException {
 
         List<Songs> allSongsList = new ArrayList<>();

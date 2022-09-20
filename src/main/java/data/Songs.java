@@ -27,35 +27,17 @@ public class Songs {
         return songName;
     }
 
-    /*public void setSongName(String songName) {
-        this.songName = songName;
-    }*/
-
     public double getDuration() {
         return songDuration;
     }
-
-    /*public void setDuration(double duration) {
-        this.songDuration = duration;
-    }*/
 
     public String getSongPath() {
         return songPath;
     }
 
-    /*public void setSongPath(String songPath) {
-        this.songPath = songPath;
-    }*/
-
-
     public int getSongID() {
         return songID;
     }
-
-    /*public void setSongID(int songID) {
-        this.songID = songID;
-    }*/
-
 
     public void setSongDuration(double songDuration) {
         this.songDuration = songDuration;

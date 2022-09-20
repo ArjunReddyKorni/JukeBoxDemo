@@ -9,6 +9,8 @@ import java.sql.SQLException;
 
 public class SongsDAO {
 
+    /**  This Method will Take song_ID as Parameter and with the help of DQL query Fetch the songPath
+     * with the help of prepared statement and returns the SongPath from Songs Table */
     public String getPathOfTheSong(int songId) throws SQLException, ClassNotFoundException {
 
         

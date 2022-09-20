@@ -47,23 +47,6 @@ class JukeOperationTest {
     }
 
 
-    void searchArtistByArtistName() throws SQLException, ClassNotFoundException {
-        String artistName = "s";
-        List<Songs> songsList = jukeOperation.searchArtistByArtistName(artistName);
-        assertEquals(7,songsList);
-        List<Songs> songsList1 = jukeOperation.searchArtistByArtistName(artistName);
-        assertNotEquals(5,songsList);
-    }
-
-
-    void searchGenreByGenreType() throws SQLException, ClassNotFoundException {
-
-        String genreType = "classic";
-        List<Songs> songsList = jukeOperation.searchGenreByGenreType(genreType);
-        assertEquals(7,songsList.size());
-        List<Songs> songsList1 = jukeOperation.searchGenreByGenreType(genreType);
-        assertNotEquals(5,songsList.size());
-    }
 
     @Test
     void searchSongBySongName() throws SQLException, ClassNotFoundException {
@@ -92,12 +75,7 @@ class JukeOperationTest {
         assertNotEquals(5,songsList.size());
     }
 
-    void exsistingPlayList() throws SQLException, ClassNotFoundException {
 
-      List<Songs> songsList = playListDAO.exsitingPlaylist();
-      assertEquals(1,songsList.size());
-
-    }
     @Test
     void getPathOfSong() throws SQLException, ClassNotFoundException {
 
